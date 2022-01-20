@@ -1,12 +1,13 @@
 import React from 'react';
-import {Container, IconsContainer, IconImage, RideContainer,TimeContainer,VelocityAndDistanceContainer,TimeText, TimeTextLabelContainer, TimeTextLabel,DistanceContainer,DistanceLabel,DistanceText, VelocityLabel, VelocityText, VelocityContainer} from './styles';
+import {Container, IconsContainer, IconImage, RideContainer,VelocityAndDistanceContainer,DistanceContainer,DistanceLabel,DistanceText, VelocityLabel, VelocityText, VelocityContainer} from './styles';
 import RideButtonComponent from '../../components/RideButtom';
 import StopRideButtom from '../../components/StopRideButtom';
+import Cronometer from '../Cronometer';
 import * as Icon from '../../../assets'
 import { useRoute } from '@react-navigation/native';
 
 const Footer : React.FC = ()=>{
-    const {name} = useRoute();
+    const {name} = useRoute();           
 
     return (
 
@@ -24,15 +25,9 @@ const Footer : React.FC = ()=>{
         ) : 
         (
 
-            <RideContainer>
-               
-                <TimeContainer>
-                    <TimeTextLabelContainer>
-                        <TimeTextLabel>Tempo</TimeTextLabel>
-                    </TimeTextLabelContainer>
-                    <TimeText>00:00:11</TimeText>
-                </TimeContainer>
-               
+            <RideContainer>      
+                <Cronometer/>
+
                 <VelocityAndDistanceContainer>
                
                   <DistanceContainer>
