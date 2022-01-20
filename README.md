@@ -15,6 +15,6 @@ A stage of precess selective
 5 - with the terminal openned in the project directory, running the  expo bundler and the emulator running, scan the QRCODE on your mobile device using expo go app or follow the steps in your terminal to start on emulator.
 
 # Or just download here
-###https://exp.host/@programadorleandrosantos/Pedalada
+* https://exp.host/@programadorleandrosantos/Pedalada
 
 ###### Technologies used : React Native, StyledComponents,Typescript, React Context Api, Expo, GoogleMaps, Expo-av.
