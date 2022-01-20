@@ -1,18 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import {MaterialIcons} from '@expo/vector-icons'
 'expo-location';
 import { getCurrentPositionAsync, requestForegroundPermissionsAsync } from 'expo-location';
 import {Position} from '../../interfaces'
 import MapView, { Marker } from 'react-native-maps';
-import {light} from '.././../screens/styles'
+import {light, dark} from '.././../screens/styles'
 import { Alert } from 'react-native';
-import { CurrentPositionButton, FloatButtomContainer } from './styles';
+import {dayOrNight} from '../../utils'
 
 const Map:React.FC = ()=>{
     const [origin, setOringin] = useState({
      longitude:-43.0681344,
      latitude: -22.8401444
     } as Position);
+
+    const [dayOrnight, setDayOrnight] = useState('')
     
 
     const getUserLcoation = useCallback(async()=>{
@@ -32,6 +33,8 @@ const Map:React.FC = ()=>{
     },[])
 
     useEffect(() => {
+        const dayornight = dayOrNight();
+        setDayOrnight(dayornight)
         getUserLcoation();
     }, []);
     
@@ -46,9 +49,9 @@ const Map:React.FC = ()=>{
           }}
           zoomEnabled={false}
           loadingEnabled={true}
-          customMapStyle={light}
+          customMapStyle={dayOrnight === 'morning' ? light : dark}
           showsUserLocation
-          showsMyLocationButton={false}
+          showsMyLocationButton={true}
           toolbarEnabled={false}	
           style={{
             height: '100%',
@@ -64,16 +67,6 @@ const Map:React.FC = ()=>{
           title="Você esta aqui!"
         />
       </MapView>
-
-      {/* <FloatButtomContainer>
-          <CurrentPositionButton>
-              <MaterialIcons name="crop-square" size={30} color="black"/>
-          </CurrentPositionButton>
-          <CurrentPositionButton onPress={()=> console.log('clicked')}>
-            <MaterialIcons name="gps-fixed" size={30} color="black"/>
-          </CurrentPositionButton>
-        </FloatButtomContainer> */}
-
       </>
     )
 }
