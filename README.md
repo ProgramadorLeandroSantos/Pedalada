@@ -2,6 +2,7 @@
 A stage of precess selective
 
 ![Pedalada](https://github.com/ProgramadorLeandroSantos/Pedalada/blob/main/assets/lightmap.gif)
+![Pedalada](https://github.com/ProgramadorLeandroSantos/Pedalada/blob/main/assets/darkmap.gif)
 #### About the App: Application for android and ios is a simple app required for o job interview.
 
 ## How to use?
