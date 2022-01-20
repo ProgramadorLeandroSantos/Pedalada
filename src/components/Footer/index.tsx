@@ -3,11 +3,15 @@ import {Container, IconsContainer, IconImage, RideContainer,VelocityAndDistanceC
 import RideButtonComponent from '../../components/RideButtom';
 import StopRideButtom from '../../components/StopRideButtom';
 import Cronometer from '../Cronometer';
-import * as Icon from '../../../assets'
+import * as Icon from '../../../assets';
 import { useRoute } from '@react-navigation/native';
+import {distance,velocity} from '../../utils/dbFake';
+import {useCronometer} from '../../hook/cronometer'
 
 const Footer : React.FC = ()=>{
-    const {name} = useRoute();           
+    const {name} = useRoute();  
+    const {status} =  useCronometer();    
+    const emptyData = '----'     
 
     return (
 
@@ -32,12 +36,18 @@ const Footer : React.FC = ()=>{
                
                   <DistanceContainer>
                         <DistanceLabel>Distância</DistanceLabel>
-                        <DistanceText>00:00:11</DistanceText>
+                        <DistanceText>
+                            { status ? emptyData:
+                            distance[Math.floor(Math.random() * distance.length)]}
+                        </DistanceText>
                   </DistanceContainer>
                
                   <VelocityContainer>
                         <VelocityLabel>Velocidade (Km/h)</VelocityLabel>
-                        <VelocityText>31.1</VelocityText>
+                        <VelocityText>
+                            {status ? emptyData:
+                            velocity[Math.floor(Math.random() * velocity.length)]}
+                        </VelocityText>
                   </VelocityContainer>
                
                 </VelocityAndDistanceContainer>
