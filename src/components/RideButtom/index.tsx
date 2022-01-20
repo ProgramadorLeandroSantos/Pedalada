@@ -1,6 +1,6 @@
 import React from 'react';
 import {Title, RideButtomComponente} from './styles';
-
+import { useNavigation } from '@react-navigation/native';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 
 interface RideBTNProps{
@@ -8,8 +8,10 @@ interface RideBTNProps{
 }
 
 const RideButtom : React.FC<RideBTNProps> = ({title})=>{
+
+    const navigation = useNavigation()
     return (
-        <RideButtomComponente onPress={()=> console.log('Start clicked!')}>
+        <RideButtomComponente onPress={()=> navigation.navigate('Ride' as any)}>
                 <Title>{title}</Title>
                 <MaterialCommunityIcons name='arrow-right' size={30} color='white' />
         </RideButtomComponente>

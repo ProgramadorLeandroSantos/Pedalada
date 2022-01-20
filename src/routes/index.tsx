@@ -11,6 +11,7 @@ const AppRoute: React.FC = () => {
         headerShown: false,
       }}>
       <App.Screen name="Main" component={Screens.Main} />
+      <App.Screen name="Ride" component={Screens.Ride} />
     </App.Navigator>
   );
 };
