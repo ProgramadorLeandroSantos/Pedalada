@@ -1,7 +1,7 @@
 # Pedalada
 A stage of precess selective
 
-![CodeHero](https://github.com/ProgramadorLeandroSantos/CodeHero-Objective/blob/main/src/assets/gifts/codehero.gif)
+![Pedalada](https://github.com/ProgramadorLeandroSantos/Pedalada/blob/main/assets/lightmap.gif)
 #### About the App: Application for android and ios is a simple app required for o job interview.
 
 ## How to use?
